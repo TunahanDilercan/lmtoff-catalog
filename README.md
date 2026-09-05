@@ -8,6 +8,7 @@ Proje, bir e-ticaret altyapısı kurmaktan çok **arayüz, tema ve hareket tasar
 Compose ile uçtan uca kurmaya odaklanır: özel tipografi ölçeği, marka renk paleti,
 Canvas ile çizilen ikonlar ve animasyonlu açılış ekranı.
 
+[![Android CI](https://github.com/TunahanDilercan/lmtoff-catalog/actions/workflows/android.yml/badge.svg)](https://github.com/TunahanDilercan/lmtoff-catalog/actions/workflows/android.yml)
 ![Android](https://img.shields.io/badge/Android-24%2B-3DDC84?style=flat-square&logo=android&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-2.0-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
 ![Compose](https://img.shields.io/badge/Jetpack%20Compose-Material%203-4285F4?style=flat-square)
