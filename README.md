@@ -12,7 +12,6 @@ Canvas ile çizilen ikonlar ve animasyonlu açılış ekranı.
 ![Android](https://img.shields.io/badge/Android-24%2B-3DDC84?style=flat-square&logo=android&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-2.0-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
 ![Compose](https://img.shields.io/badge/Jetpack%20Compose-Material%203-4285F4?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-lightgrey?style=flat-square)
 
 ## Ekran Görüntüleri
 
@@ -50,19 +49,8 @@ data/  ProductRepository ← InMemoryProductRepository (sampleProducts)
 util/  WhatsAppOrder     ← sepetten sipariş mesajı üretimi ve intent yönlendirmesi
 ```
 
-```
-app/src/main/java/com/lmtoff/catalog/
-├── MainActivity.kt
-├── data/          Product, ProductRepository, fiyat yardımcıları, örnek veri
-├── ui/
-│   ├── LmtoffApp.kt
-│   ├── cart/      CartViewModel, sepet modelleri
-│   ├── catalog/   CatalogViewModel
-│   ├── components/ ProductCard, CategoryChip, CartFloatingButton, CartIcon ...
-│   ├── screens/   Splash, Home, ProductDetail, Cart
-│   └── theme/     renk paleti, tipografi
-└── util/          WhatsAppOrder
-```
+Sepet mantığı (adet birleştirme, renge göre ayrı satır, toplam hesabı) ve sipariş
+mesajı üretimi birim testleriyle doğrulanır.
 
 ## Kapsam Notu
 
@@ -70,51 +58,3 @@ app/src/main/java/com/lmtoff/catalog/
 yoktur; sipariş WhatsApp'a yönlendirilir. Bu bilinçli bir kapsam tercihidir — bu repo
 arayüz katmanına odaklanır. Ödeme sağlayıcısı ve backend içeren sürüm için:
 [Clipix](https://github.com/TunahanDilercan/UrunList_Clipix).
-
-## Teknolojiler
-
-| Alan | Kullanılan |
-| --- | --- |
-| Dil | Kotlin |
-| Arayüz | Jetpack Compose, Material 3 |
-| Durum yönetimi | ViewModel + StateFlow |
-| Animasyon | Compose Animation, Lottie |
-| Build | Gradle Kotlin DSL, AGP |
-| Test | JUnit 4 (birim testleri) |
-| CI | GitHub Actions (test + debug APK) |
-
-## Kurulum
-
-```bash
-git clone https://github.com/TunahanDilercan/lmtoff-catalog.git
-cd lmtoff-catalog
-./gradlew assembleDebug
-```
-
-Ya da projeyi Android Studio ile açıp Gradle sync sonrası çalıştırın. Gereksinimler:
-JDK 17, Android SDK 35, minimum Android 7.0 (API 24).
-
-### Release imzalama
-
-İmzalama bilgileri repoya girmez. Kendi anahtarınızla imzalı bir sürüm üretmek için:
-
-```bash
-cp keystore.properties.example keystore.properties   # kendi bilgilerinizi girin
-./gradlew assembleRelease
-```
-
-`keystore.properties` yoksa release derlemesi debug anahtarıyla imzalanır; bu yalnızca
-yerel testler içindir.
-
-## Testler
-
-```bash
-./gradlew testDebugUnitTest
-```
-
-Sepet mantığı (adet birleştirme, renge göre ayrı satır, toplam hesabı) ve sipariş
-mesajı üretimi birim testleriyle doğrulanır.
-
-## Lisans
-
-[MIT](LICENSE) — Tunahan Dilercan
