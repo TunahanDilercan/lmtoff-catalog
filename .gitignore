@@ -1,0 +1,22 @@
+# Gradle / Android Studio
+.gradle/
+.idea/
+.kotlin/
+build/
+app/build/
+app/release/
+local.properties
+*.iml
+
+# İmzalama (asla commit edilmez)
+keystore.properties
+*.keystore
+*.jks
+
+# Build çıktıları ve profiling dosyaları
+*.apk
+*.aab
+*.hprof
+
+# Kaynak görsellerin ham kopyaları (res/ altındakiler kullanılır)
+asset/
